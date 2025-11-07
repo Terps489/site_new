@@ -1,64 +1,133 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* ===== БАЗА ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; }
 body {
-  font-family: sans-serif;
-  background-color: #e6e9f8;
-  color: #0b1f54;
-  line-height: 1.5;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  background: linear-gradient(180deg, #05215F 0%, #113886 42%, #CFD5F7 100%);
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+.container { width: min(1180px, 92%); margin: 0 auto; }
+
+/* ===== ШАПКА ===== */
+.header { position: absolute; left: 0; right: 0; top: 0; z-index: 5; }
+.header__row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 0 8px;
 }
 
-.header {
-  background: linear-gradient(to bottom, #001e6c, #1d3cb2);
-  padding: 20px 0;
-  color: white;
+/* Заглушка логотипа */
+.logo-placeholder{
+  width: 140px; height: 72px;
+  background: #ffffff;
+  color: #0B1F54;
+  display: grid; place-items: center;
+  font-weight: 700; letter-spacing: .04em;
+  border-radius: 4px;
 }
 
-.logo {
-  height: 60px;
+.nav { display: flex; gap: 56px; font-weight: 600; }
+.nav a {
+  color: #FFFFFF; text-decoration: none; font-size: 18px; letter-spacing: .02em;
+  transition: opacity .2s ease;
 }
+.nav a:hover { opacity: .85; }
 
-.nav {
-  display: flex;
-  gap: 20px;
-  justify-content: flex-end;
-}
-
+/* ===== HERO ===== */
 .hero {
-  text-align: center;
-  padding: 60px 0;
-  background: linear-gradient(to bottom, #1d3cb2, #e6e9f8);
   position: relative;
+  padding-top: 120px;      /* отступ под шапку */
+  padding-bottom: 220px;   /* место под "облака" */
+  overflow: hidden;
 }
 
-.cta-btn {
-  margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #6aa4ff;
-  color: white;
-  border: none;
-  border-radius: 8px;
+.hero__inner { position: relative; min-height: 420px; }
+
+.hero__left { position: relative; z-index: 3; max-width: 560px; margin-top: 40px; }
+
+.hero h1{
+  color:#FFFFFF; font-weight:700; font-size:42px; line-height:1.15;
+  letter-spacing:.2px; margin:0 0 16px 0;
+}
+
+/* Кнопка */
+.cta-btn{
+  display: inline-block;
+  padding: 11px 24px;
+  background: #ECEBFF;
+  color: #3B28CC;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 22px;
+  border: 2px solid rgba(59, 40, 204, .25);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
   cursor: pointer;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .2s ease;
+}
+.cta-btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.22); }
+.cta-btn:active{ transform: translateY(0); }
+
+/* Заглушка дрона (справа) */
+.drone-placeholder{
+  position: absolute;
+  right: 8%;
+  top: 20px;
+  width: 520px;
+  height: 320px;
+  background: #0E1A39;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.35);
+  display: grid; place-items: center;
+  font-weight: 700; font-size: 20px; letter-spacing: .1em;
+  color: #B9C8FF;
+  z-index: 2;
+  user-select: none; pointer-events: none;
 }
 
-.drone-img {
-  max-width: 300px;
-  margin-top: 30px;
+/* Заглушка "облаков" по низу */
+.clouds{
+  position: absolute;
+  left: 50%;
+  bottom: -60px;
+  transform: translateX(-50%);
+  width: 1600px;
+  height: 420px;
+  /* имитация облаков: мягкий эллиптический градиент */
+  background:
+    radial-gradient(ellipse at 20% 80%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.0) 60%),
+    radial-gradient(ellipse at 50% 90%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.0) 62%),
+    radial-gradient(ellipse at 80% 78%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.0) 58%);
+  filter: blur(6px);
+  z-index: 1;
 }
 
-.two-columns {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 60px 0;
+/* ===== INFO ===== */
+.info{ color:#0B1F54; background: #E6E9F8; }
+.two-columns{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 64px 0;
+}
+.info h2{
+  color:#0B1F54; font-size:28px; font-weight:700; margin-bottom:16px;
+}
+.info p{ color:#22335F; font-size:16px; }
+.info ul{ margin-top:12px; color:#22335F; }
+.info li{ margin: 6px 0 0 18px; }
+
+/* ===== АДАПТИВ ===== */
+@media (max-width: 1100px) {
+  .nav { gap: 32px; }
+  .drone-placeholder{ right: 2%; width: 440px; height: 280px; }
+}
+@media (max-width: 860px) {
+  .nav{ display:none; } /* потом сделаем бургер */
+  .hero__left{ margin-top: 20px; }
+  .drone-placeholder{
+    position: static; width: 92%; height: 240px;
+    margin: 28px auto 0; display: grid; place-items:center;
+  }
+  .clouds{ width: 130%; }
+  .two-columns{ grid-template-columns: 1fr; }
 }

@@ -4,12 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Детский центр БПЛА</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header class="header">
-    <div class="container">
-      <img src="assets/images/logo.svg" alt="Логотип" class="logo" />
+    <div class="container header__row">
+      <!-- Заглушка логотипа -->
+      <div class="logo-placeholder" aria-label="Логотип">ЛОГО</div>
+
       <nav class="nav">
         <a href="#about">О нас</a>
         <a href="#schedule">Расписание</a>
@@ -20,18 +23,25 @@
   </header>
 
   <section class="hero">
-    <div class="clouds-bg">
-      <h1>Научись программировать БПЛА с нуля</h1>
-      <button class="cta-btn">Подать заявку</button>
-      <img src="assets/images/drone.png" alt="Дрон" class="drone-img"/>
+    <div class="container hero__inner">
+      <div class="hero__left">
+        <h1>Научись программировать БПЛА с нуля</h1>
+        <button class="cta-btn">Подать заявку</button>
+      </div>
+
+      <!-- Заглушка дрона -->
+      <div class="drone-placeholder" aria-label="Дрон">DRONE</div>
     </div>
+
+    <!-- Заглушка облаков -->
+    <div class="clouds"></div>
   </section>
 
-  <section class="info">
+  <section class="info" id="about">
     <div class="container two-columns">
       <div>
         <h2>Детский центр БПЛА</h2>
-        <p>Обучение в онлайн-формате доступно уже сегодня!</p>
+        <p>Обучение в онлайн-формате доступно уже сегодня! Сделай вклад в своё стабильное будущее.</p>
       </div>
       <div>
         <h2>Здесь вы получите</h2>
@@ -44,8 +54,5 @@
       </div>
     </div>
   </section>
-
-  <!-- Далее пойдут расписание, блоки про направления, форма, соцсети и подвал -->
-
 </body>
 </html>
