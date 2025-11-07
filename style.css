@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #e6e9f8;
+  color: #0b1f54;
+  line-height: 1.5;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(to bottom, #001e6c, #1d3cb2);
+  padding: 20px 0;
+  color: white;
+}
+
+.logo {
+  height: 60px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 0;
+  background: linear-gradient(to bottom, #1d3cb2, #e6e9f8);
+  position: relative;
+}
+
+.cta-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #6aa4ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.drone-img {
+  max-width: 300px;
+  margin-top: 30px;
+}
+
+.two-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 60px 0;
+}
