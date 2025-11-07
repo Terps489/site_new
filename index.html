@@ -6,13 +6,12 @@
   <title>Детский центр БПЛА</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <style>html{scroll-behavior:smooth}</style>
 </head>
 <body>
   <header class="header">
     <div class="container header__row">
-      <!-- Заглушка логотипа -->
-      <div class="logo-placeholder" aria-label="Логотип">ЛОГО</div>
-
+      <img src="assets/images/logo.png" alt="Детский центр БПЛА" class="logo">
       <nav class="nav">
         <a href="#about">О нас</a>
         <a href="#schedule">Расписание</a>
@@ -22,35 +21,38 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero__inner">
+  <!-- ПЕРВЫЙ ЭКРАН -->
+  <section class="hero" id="top">
+    <div class="container hero__grid">
       <div class="hero__left">
-        <h1>Научись программировать БПЛА с нуля</h1>
-        <button class="cta-btn">Подать заявку</button>
+        <p class="hero__lead">Научись программировать БПЛА с нуля</p>
+        <button class="cta-btn" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">
+          Подать заявку
+        </button>
       </div>
 
-      <!-- Заглушка дрона -->
-      <div class="drone-placeholder" aria-label="Дрон">DRONE</div>
+      <img src="assets/images/drone.png" alt="Дрон" class="drone-img">
     </div>
 
-    <!-- Заглушка облаков -->
-    <div class="clouds"></div>
+    <div class="hero__clouds"></div>
   </section>
 
-  <section class="info" id="about">
-    <div class="container two-columns">
-      <div>
-        <h2>Детский центр БПЛА</h2>
-        <p>Обучение в онлайн-формате доступно уже сегодня! Сделай вклад в своё стабильное будущее.</p>
+  <!-- О НАС -->
+  <section class="about" id="about" aria-label="О нас">
+    <div class="container about__grid">
+      <div class="about__col">
+        <h2 class="h2">ДЕТСКИЙ ЦЕНТР БПЛА</h2>
+        <p>Обучение в онлайн-формате доступно уже сегодня!<br>
+           Сделай вклад в своё стабильное будущее.</p>
       </div>
-      <div>
-        <h2>Здесь вы получите</h2>
-        <ul>
-          <li>Уникальную среду для общения и развития</li>
-          <li>Увлекательные проекты и курсы</li>
-          <li>Взаимодействие с преподавателями</li>
-          <li>Опыт программирования БПЛА</li>
-        </ul>
+      <div class="about__col">
+        <h2 class="h2">ЗДЕСЬ ВЫ ПОЛУЧИТЕ</h2>
+        <ol class="about__list">
+          <li>Уникальную среду для общения и развития.</li>
+          <li>Увлекательные проекты и курсы.</li>
+          <li>Взаимодействие с преподавателями курса.</li>
+          <li>Опыт программирования БПЛА.</li>
+        </ol>
       </div>
     </div>
   </section>
