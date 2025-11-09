@@ -209,32 +209,55 @@ body{
 /* ================
    ADAPTIVE
    ================ */
-@media (max-width: 1200px){
-  .schedule-img{ width: 42vw; }
-  .direction img{ width: 22vw; }
-  .qr{ width: 16vw; height: 16vw; }
-}
+@media (max-width:980px){
+  /* меню скрываем как было */
+  .nav{display:none;}
 
-@media (max-width: 980px){
+  /* позиция и размеры CTA-группы (выше облаков, по центру) */
+  :root{
+    --cta-w: 86vw;
+    --cta-left: 50%;
+    --cta-bottom: 22vh;   /* было 8vh → подняли выше */
+  }
+  .cta{ left: calc(var(--cta-left) - var(--cta-w)/2); }
+  .cta-lead{ font-size: 4.6vw; line-height: 5.4vw; text-align: center; }
+  .cta-btn{ font-size: 3.8vw; padding: 2.8vw 6.2vw; }
+
+  /* ДРОН: полностью убираем на телефоне */
+  .drone-img{
+    display: none !important;
+    filter: none !important;   /* на всякий случай, чтобы “отражение” точно исчезло */
+  }
+
+  /* ОБЛАКА: Сильно выше и чуть шире экрана, без появления горизонтального скролла */
+  .clouds-img{
+    bottom: 14vh;        /* было -3vh → “на много выше” */
+    width: 220vw;        /* шире, чтобы небыло краёв */
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
+  }
+
+  /* дальше — твои существующие мобильные стили блоков */
+  .about__grid{ grid-template-columns: 1fr; gap: 32px; }
+  .h2{ font-size: 5.6vw; }
+  .about p, .about__list{ font-size: 3.8vw; }
+
   .schedule, .directions, .registration{ padding: 12vw 0; }
-  .schedule__grid,
-  .directions__grid,
-  .registration__grid{ grid-template-columns: 1fr; gap: 8vw; }
-
-  .schedule .h2,
-  .directions .h2,
-  .registration .h2{ font-size: 5.6vw; margin-bottom: 3vw; }
-
-  .schedule p,
-  .direction p,
-  .registration p{ font-size: 3.8vw; }
-
+  .schedule__grid, .directions__grid, .registration__grid{
+    grid-template-columns: 1fr; gap: 8vw;
+  }
+  .schedule .h2, .directions .h2, .registration .h2{
+    font-size: 5.6vw; margin-bottom: 3vw;
+  }
+  .schedule p, .direction p, .registration p{ font-size: 3.8vw; }
   .schedule-img{ width: 78vw; transform: rotate(-8deg); margin: 2vw auto 0; }
   .direction h3{ font-size: 4.6vw; margin-bottom: 2vw; }
   .direction img{ width: 78vw; border-radius: 3vw; }
-
   .qr{ width: 36vw; height: 36vw; border-radius: 2.6vw; }
   .footer__content p{ font-size: 3.6vw; }
   .footer__logos img{ height: 6.2vw; }
 }
+
 
