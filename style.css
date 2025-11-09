@@ -55,16 +55,40 @@ body{
 }
 
 /* CLOUDS */
-.clouds-img{
-  position:absolute;left:50%;transform:translateX(-50%);
-  bottom:-92vh;width:200vw;z-index:3;filter:brightness(1.12) contrast(1.08);
-  -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 78%,rgba(0,0,0,0) 100%);
-          mask-image:linear-gradient(to bottom,rgba(0,0,0,1) 78%,rgba(0,0,0,0) 100%);
+/* CLOUDS */
+.clouds-img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -75vh;
+  width: 200vw;
+  z-index: 2; /* облака ниже текста */
+  filter: brightness(1.12) contrast(1.08);
+  pointer-events: none;
+  isolation: isolate; /* создаём изолированный слой для маски */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 78%, rgba(0,0,0,0) 100%);
+          mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 78%, rgba(0,0,0,0) 100%);
 }
 
 /* ABOUT */
-.about{position:relative;z-index:2;background:#E6E9F8;color:#0B1F54;padding:16vw 0 6vw;}
-.about__grid{display:grid;grid-template-columns:1fr 1fr;gap:6%;}
+.about {
+  position: relative;
+  z-index: 5; /* поднимаем весь блок выше маски */
+  background: #E6E9F8;
+  color: #0B1F54;
+  padding: 24vw 0 8vw; /* чуть ниже текст, секция крупнее */
+  isolation: isolate; /* создаёт свой stacking context — текст поверх облаков */
+}
+
+.about__grid {
+  position: relative;
+  z-index: 10; /* текст гарантированно поверх */
+}
+
+
+/* ABOUT */
+.about{position:relative;z-index:2;background:#E6E9F8;color:#0B1F54;padding:22vw 0 6vw;}
+.about__grid{display:grid;grid-template-columns:1fr 1fr;gap:6%;z-index: 4;}
 .h2{font-size:1.8vw;font-weight:800;letter-spacing:.02em;color:#182e6a;margin-bottom:4vw;text-transform:uppercase;}
 .about p,.about__list{font-size:1.05vw;color:#22335F;line-height:1.6;}
 .about__list{margin-top:.12vw;padding-left:1.2em;}
@@ -229,18 +253,9 @@ body{
     filter: none !important;   /* на всякий случай, чтобы “отражение” точно исчезло */
   }
 
-  /* ОБЛАКА: Сильно выше и чуть шире экрана, без появления горизонтального скролла */
-  .clouds-img{
-    bottom: 14vh;        /* было -3vh → “на много выше” */
-    width: 220vw;        /* шире, чтобы небыло краёв */
-    left: 50%;
-    transform: translateX(-50%);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 80%, rgba(0,0,0,0) 100%);
-  }
 
   /* дальше — твои существующие мобильные стили блоков */
-  .about__grid{ grid-template-columns: 1fr; gap: 32px; }
+  .about__grid{ grid-template-columns: 1fr; gap: 32px; z-index: 4; }
   .h2{ font-size: 5.6vw; }
   .about p, .about__list{ font-size: 3.8vw; }
 
