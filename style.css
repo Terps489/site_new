@@ -287,6 +287,11 @@ body{
   .qr{ width: 36vw; height: 36vw; border-radius: 2.6vw; }
   .footer__content p{ font-size: 3.6vw; }
   .footer__logos img{ height: 6.2vw; }
+
+  .clouds-img {
+    bottom: -30vh;
+    width: 250vw;
+  }
 }
 
 
