@@ -26,6 +26,15 @@
     <div class="container hero__stage">
       <div class="cta">
         <p class="cta-lead">Научись программировать БПЛА с нуля</p>
+
+        <!-- мобильные крупные кнопки (видны только на мобилках) -->
+        <div class="mobile-nav" aria-hidden="false">
+          <a href="#about" class="mobile-btn">О нас</a>
+          <a href="#schedule" class="mobile-btn">Расписание</a>
+          <a href="#advantages" class="mobile-btn">Преимущества</a>
+          <a href="#registration" class="mobile-btn">Регистрация</a>
+        </div>
+
         <button class="cta-btn" onclick="document.querySelector('#registration').scrollIntoView({behavior:'smooth'})">
           Подать заявку
         </button>

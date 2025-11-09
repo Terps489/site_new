@@ -292,6 +292,43 @@ body{
     bottom: -5vh;
     width: 250vw;
   }
+
+  /* Мобильные крупные кнопки над подачей заявки */
+  .mobile-nav{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:50vh; /* примерно половина экрана телефона */
+    gap: .6vh;
+    margin-bottom: .8vh;
+  }
+  .mobile-nav .mobile-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height: calc(50vh / 4); /* 4 кнопки равной высоты */
+    font-family:'Arial',sans-serif;
+    font-weight:700;
+    font-size:5.2vw;
+    color:#fff;
+    text-decoration:none;
+    background: rgba(255,255,255,0.03);
+    border: .12vh solid rgba(255,255,255,0.06);
+    border-radius: .8vw;
+    box-shadow: 0 .6vw 1.2vw rgba(0,0,0,.12);
+    transition: background .18s, transform .12s;
+  }
+  .mobile-nav .mobile-btn:active,
+  .mobile-nav .mobile-btn:focus,
+  .mobile-nav .mobile-btn:hover{
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-.2vh);
+  }
+
+  /* уменьшаем отступ сверху у .cta на мобилках, чтобы влезало лучше */
+  .cta{ left: calc(var(--cta-left) - var(--cta-w)/2); top: 6vh; bottom: auto; width: var(--cta-w); }
+  .cta-btn{ margin-top: .6vh; }
 }
 
 
