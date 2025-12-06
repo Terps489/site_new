@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Детский центр БПЛА</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nata+Sans:wght@100..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>html{scroll-behavior:smooth}</style>
+  <script src="script.js" defer></script>
+
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
 </head>
+
 <body>
 
   <header class="header">
     <div class="container header__row">
-      <img src="assets/images/logo.png" alt="Детский центр БПЛА" class="logo">
+      <a href="#top">
+        <img src="assets/images/logo.png" alt="Детский центр БПЛА" class="logo">
+      </a>
       <nav class="nav">
         <a href="#about">О нас</a>
         <a href="#schedule">Расписание</a>
@@ -41,6 +50,7 @@
       </div>
       <img src="assets/images/drone.png" alt="Дрон" class="drone-img">
     </div>
+
     <img src="assets/images/clouds.png" class="clouds-img" alt="Облака">
   </section>
 
@@ -48,7 +58,7 @@
     <div class="container about__grid">
       <div class="about__col">
         <h2 class="h2">ДЕТСКИЙ ЦЕНТР БПЛА</h2>
-        <p>Обучение в онлайн-формате доступно уже сегодня!<br/>Сделай вклад в своё стабильное будущее.</p>
+        <p>Обучение в онлайн-формате доступно уже сегодня!<br />Сделай вклад в своё стабильное будущее.</p>
       </div>
       <div class="about__col">
         <h2 class="h2">ЗДЕСЬ ВЫ ПОЛУЧИТЕ</h2>
@@ -68,12 +78,12 @@
         <h2 class="h2">УДОБНОЕ<br>РАСПИСАНИЕ<br>ЗАНЯТИЙ</h2>
         <p>
           Расписание занятий детского центра БПЛА разработано с учётом учебного расписания школьников 4–11 классов,
-          предлагая удобные и разнообразные времена для увлекательного обучения. 
-          Занятия помогут ребятам освоить пилотирование, программирование и электронику, 
+          предлагая удобные и разнообразные времена для увлекательного обучения.
+          Занятия помогут ребятам освоить пилотирование, программирование и электронику,
           совмещая учёбу с интересным хобби.
         </p>
       </div>
-      <div class="schedule__col">
+      <div class="img_rotate">
         <img src="assets/images/Schedule.png" alt="Расписание занятий" class="schedule-img">
       </div>
     </div>
@@ -84,17 +94,20 @@
     <div class="container directions__grid">
       <div class="direction">
         <h3>ПРОГРАММИРОВАНИЕ</h3>
-        <p>В детском центре по БПЛА дети изучают основы программирования, создавая алгоритмы для управления беспилотниками и автоматизации полётов.</p>
+        <p>В детском центре по БПЛА дети изучают основы программирования, создавая алгоритмы для управления
+          беспилотниками и автоматизации полётов.</p>
         <img src="assets/images/Programming.png" alt="Программирование">
       </div>
       <div class="direction">
         <h3>ПИЛОТИРОВАНИЕ</h3>
-        <p>Дети учатся управлять беспилотниками в реальном времени, развивая навыки точного пилотирования и безопасного выполнения полётных задач.</p>
+        <p>Дети учатся управлять беспилотниками в реальном времени, развивая навыки точного пилотирования и безопасного
+          выполнения полётных задач.</p>
         <img src="assets/images/Piloting.png" alt="Пилотирование">
       </div>
       <div class="direction">
         <h3>ЭЛЕКТРОНИКА</h3>
-        <p>Ребята знакомятся с электроникой, изучая устройства и датчики, обеспечивающие стабильную работу и безопасность дронов.</p>
+        <p>Ребята знакомятся с электроникой, изучая устройства и датчики, обеспечивающие стабильную работу и
+          безопасность дронов.</p>
         <img src="assets/images/Electronics.png" alt="Электроника">
       </div>
     </div>
@@ -118,23 +131,28 @@
         </div>
       </div>
     </div>
+
+
     <footer class="footer">
       <div class="container footer__content">
         <p>
           По вопросам поступления, организации обучения:<br>
-          <b>+7 (917) 229-75-70</b> &nbsp;&nbsp; | &nbsp;&nbsp; bpla@kai.ru
+          <b><a class="link" href="tel:+79172297570">+7 (917) 229-75-70</a></b> &nbsp;&nbsp; | &nbsp;&nbsp; <a
+            class="link" href="email:bpla@kai.ru">bpla@kai.ru
         </p>
         <div class="footer__logos">
           <img src="assets/images/logo.png" alt="Детский центр БПЛА">
           <img src="assets/images/logo_kai.png" alt="КАИ">
         </div>
-        <img src="assets/images/logo_2.png" alt="Партнёр КАИ" class="footer__logo_large">
+        <div class="footer__logo_large">
+          <img src="assets/images/logo_2.png" alt="Партнёр КАИ">
+        </div>
       </div>
       <p class="footer__copy footer__copy--center">© 2025 ФГБОУ ВО "КНИТУ-КАИ"</p>
     </footer>
   </section>
 
-  <script src="script.js" defer></script>
 
 </body>
+
 </html>
