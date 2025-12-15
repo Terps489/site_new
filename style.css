@@ -22,6 +22,10 @@ body {
   background: linear-gradient(0deg, #E3E9FC 0%, #B5C3ED 13%, #3652A5 38%, #123392 44.41%, #02217E 56.25%, #030C25 100%);
 }
 
+p {
+  text-align: justify;
+}
+
 .container {
   width: 80%;
   margin: 0 auto;
@@ -48,7 +52,8 @@ body {
 
 .header__row {
   display: flex;
-  align-items: center;
+  align-items: end;
+  justify-content: center;
   gap: 2vw;
   padding-block: 1.2vw;
 }
@@ -123,6 +128,17 @@ body {
   --cta-bottom: 40vh;
 }
 
+@keyframes ctaFlyIn {
+  from {
+    transform: translateX(-100vw); /* Начинает за правой границей экрана */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .cta {
   position: absolute;
   width: var(--cta-w);
@@ -131,6 +147,9 @@ body {
   display: grid;
   row-gap: 1.1vw;
   z-index: 4;
+  
+  /* Анимация */
+  animation: ctaFlyIn 2s ease-out forwards;
 }
 
 .cta-lead {
@@ -159,6 +178,17 @@ body {
 }
 
 /* ДРОН */
+@keyframes droneFlyIn {
+  from {
+    transform: translateX(100vw); /* Начинает за правой границей экрана */
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .drone-img {
   position: absolute;
   z-index: 4;
@@ -170,6 +200,9 @@ body {
   filter: drop-shadow(0 1vw 1.6vw rgba(0, 0, 0, .35));
   pointer-events: none;
   user-select: none;
+
+  /* Анимация */
+  animation: droneFlyIn 2s ease-out forwards;
 }
 
 /* ОБЛАКА */
@@ -326,12 +359,10 @@ body {
   box-shadow: 0 .8vw 1.6vw rgba(9, 24, 78, .18);
 }
 
-.direction-block {
+/* .direction-block {
   display: flex;
-  align-items: center;
-  gap: 2vw;
-  margin-bottom: 4vw;
-}
+  gap: 1vw;
+} */
 
 .dir_back_cloud {
   position: absolute;
@@ -380,6 +411,7 @@ body {
 
 /* QR */
 .qr-wrap {
+  
   margin-top: 1vw;
 }
 
@@ -455,6 +487,7 @@ body {
 .footer__content p {
   font-size: .95vw;
   line-height: 1.5;
+  text-align: left;
 }
 
 .footer__logos {
@@ -500,14 +533,23 @@ section {
   /* .header__row{
     height: 100vw;
   } */
-  
+
+  .header {
+    position: relative;
+  }
+
+  .hero__stage {
+    min-height: 75vh;
+  }
+
   .logo {
-  width: 50vw;
-  height: auto;
-  /* padding */
-  /* max-height: 84px; */
-  flex: 0 0 auto;
-}
+    width: 50vw;
+    height: auto;
+    margin-top: 10%;
+    /* max-height: 84px; */
+    flex: 0 0 auto;
+    object-fit:contain;
+  }
 
   :root {
     --cta-w: 86vw;
@@ -515,12 +557,14 @@ section {
     --cta-bottom: 22vh;
   }
 
-  
+
 
   .cta {
-    
-    padding-top: 10vw;
     left: calc(var(--cta-left) - var(--cta-w)/2);
+    top: 6vh;
+    bottom: auto;
+    width: var(--cta-w);
+    margin-top: 10%;
   }
 
   .cta-lead {
@@ -532,7 +576,11 @@ section {
   .cta-btn {
     font-size: 3.8vw;
     padding: 2.8vw 6.2vw;
+    margin-top: .6vh;
   }
+
+
+
 
   .drone-img {
     position: absolute;
@@ -630,10 +678,25 @@ section {
   }
 
   .direction-block {
-    flex-direction: column; /* Делаем колонку */
-    align-items: stretch; /* Растягиваем по ширине */
-    gap: 1vw;
+    flex-direction: column;
+    /* Делаем колонку */
+    align-items: stretch;
+    /* Растягиваем по ширине */
+    gap: 2vw;
     margin-bottom: 6vw;
+  }
+
+  .dir_img {
+    margin: auto;
+    width: 75vw;
+    height: auto;
+    object-fit: contain;
+    border-radius: .6vw;
+    box-shadow: 0 .8vw 1.6vw rgba(9, 24, 78, .18);
+  }
+
+  .direction {
+    margin: auto;
   }
 
   .qr-row {
@@ -643,8 +706,13 @@ section {
     margin-bottom: 8vw;
   }
 
-  .qr-text {
+  .qr-text, .qr-text p {
     gap: 2vw;
+    margin: auto;
+    text-align: center;
+  }
+  .qr-wrap{
+    margin: auto;
   }
 
   .qr {
@@ -654,10 +722,16 @@ section {
 
   .footer__content p {
     font-size: 3.6vw;
+    text-align: left;
   }
 
   .footer__logos img {
     height: 5.2vw;
+  }
+
+  .footer__copy--center {
+
+    font-size: 2vw;
   }
 
   .clouds-img {
@@ -700,14 +774,23 @@ section {
     transform: translateY(-.2vh);
   }
 
-  .cta {
-    left: calc(var(--cta-left) - var(--cta-w)/2);
-    top: 6vh;
-    bottom: auto;
-    width: var(--cta-w);
+  .flex_pil_1{
+    order: 1;
   }
-
-  .cta-btn {
-    margin-top: .6vh;
+  .flex_pil_1{
+    order: 2;
   }
+  .flex_pil_3{
+    order: 3;
+  }
+  .flex_pil_4{
+    order: 4;
+  }
+  .flex_pil_5{
+    order: 5;
+  }
+  .flex_pil_6{
+    order: 6;
+  }
+  
 }
