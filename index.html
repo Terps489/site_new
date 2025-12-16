@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Детский центр БПЛА</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
-  <style>html{scroll-behavior:smooth}</style>
+  <script src="script.js" defer></script>
+
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
 </head>
+
 <body>
 
   <header class="header">
     <div class="container header__row">
-      <img src="assets/images/logo.png" alt="Детский центр БПЛА" class="logo">
+      <a href="#top">
+        <img src="assets/images/logo.png" alt="Детский центр БПЛА" class="logo">
+      </a>
       <nav class="nav">
         <a href="#about">О нас</a>
         <a href="#schedule">Расписание</a>
         <a href="#advantages">Преимущества</a>
-        <a href="#registration">Регистрация</a>
+        <a href="#registration">Подать заявку</a>
       </nav>
     </div>
   </header>
@@ -25,22 +34,27 @@
   <section class="hero" id="top">
     <div class="container hero__stage">
       <div class="cta">
-        <p class="cta-lead">Научись программировать БПЛА с нуля</p>
+        <h1 class="cta-lead">Научись программировать БПЛА с нуля!</h1>
 
         <!-- мобильные крупные кнопки (костыль или нет?) -->
-        <div class="mobile-nav" aria-hidden="true">
+        <!-- <div class="mobile-nav" aria-hidden="true">
           <a href="#about" class="mobile-btn">О нас</a>
           <a href="#schedule" class="mobile-btn">Расписание</a>
           <a href="#advantages" class="mobile-btn">Преимущества</a>
           <a href="#registration" class="mobile-btn">Регистрация</a>
-        </div>
+        </div> -->
+
+
 
         <button class="cta-btn" onclick="document.querySelector('#registration').scrollIntoView({behavior:'smooth'})">
           Подать заявку
         </button>
       </div>
-      <img src="assets/images/drone.png" alt="Дрон" class="drone-img">
+      <img src="assets/images/drone1.png" alt="Дрон" class="drone-img">
+
+
     </div>
+
     <img src="assets/images/clouds.png" class="clouds-img" alt="Облака">
   </section>
 
@@ -48,32 +62,33 @@
     <div class="container about__grid">
       <div class="about__col">
         <h2 class="h2">ДЕТСКИЙ ЦЕНТР БПЛА</h2>
-        <p>Обучение в онлайн-формате доступно уже сегодня!<br/>Сделай вклад в своё стабильное будущее.</p>
+        <p>Обучение в онлайн-формате доступно уже сегодня!<br />Сделай вклад в своё стабильное будущее.</p>
       </div>
       <div class="about__col">
         <h2 class="h2">ЗДЕСЬ ВЫ ПОЛУЧИТЕ</h2>
-        <ol class="about__list">
+        <ul class="about__list">
           <li>Уникальную среду для общения и развития.</li>
           <li>Увлекательные проекты и курсы.</li>
           <li>Взаимодействие с преподавателями курса.</li>
           <li>Опыт программирования БПЛА.</li>
-        </ol>
+        </ul>
       </div>
     </div>
   </section>
   <!-- SCHEDULE -->
   <section class="schedule" id="schedule">
     <div class="container schedule__grid">
+      <img src="assets/images/schedule-bg.png" class="schedule-bg-shape">
       <div class="schedule__col">
-        <h2 class="h2">УДОБНОЕ<br>РАСПИСАНИЕ<br>ЗАНЯТИЙ</h2>
-        <p>
-          Расписание занятий детского центра БПЛА разработано с учётом учебного расписания школьников 4–11 классов,
-          предлагая удобные и разнообразные времена для увлекательного обучения. 
-          Занятия помогут ребятам освоить пилотирование, программирование и электронику, 
-          совмещая учёбу с интересным хобби.
-        </p>
+        <h1 class="h2">УДОБНОЕ РАСПИСАНИЕ ЗАНЯТИЙ</h2>
+          <p>
+            Расписание занятий детского центра БПЛА разработано с учётом учебного расписания школьников 4–11 классов,
+            предлагая удобные и разнообразные времена для увлекательного обучения.
+            Занятия помогут ребятам освоить пилотирование, программирование и электронику,
+            совмещая учёбу с интересным хобби.
+          </p>
       </div>
-      <div class="schedule__col">
+      <div class="img_rotate">
         <img src="assets/images/Schedule.png" alt="Расписание занятий" class="schedule-img">
       </div>
     </div>
@@ -82,21 +97,44 @@
   <!-- DIRECTIONS -->
   <section class="directions" id="advantages">
     <div class="container directions__grid">
-      <div class="direction">
-        <h3>ПРОГРАММИРОВАНИЕ</h3>
-        <p>В детском центре по БПЛА дети изучают основы программирования, создавая алгоритмы для управления беспилотниками и автоматизации полётов.</p>
-        <img src="assets/images/Programming.png" alt="Программирование">
-      </div>
-      <div class="direction">
-        <h3>ПИЛОТИРОВАНИЕ</h3>
-        <p>Дети учатся управлять беспилотниками в реальном времени, развивая навыки точного пилотирования и безопасного выполнения полётных задач.</p>
-        <img src="assets/images/Piloting.png" alt="Пилотирование">
-      </div>
-      <div class="direction">
-        <h3>ЭЛЕКТРОНИКА</h3>
-        <p>Ребята знакомятся с электроникой, изучая устройства и датчики, обеспечивающие стабильную работу и безопасность дронов.</p>
-        <img src="assets/images/Electronics.png" alt="Электроника">
-      </div>
+      
+        <div class="direction flex_pil_2">
+          <h3>ПРОГРАММИРОВАНИЕ</h3>
+          <p>В детском центре по БПЛА дети изучают основы программирования, создавая алгоритмы для управления
+            беспилотниками и автоматизации полётов.</p>
+        </div>
+
+        <img src="assets/images/Programming.png" alt="Программирование" class="dir_img flex_pil_1">
+      
+
+      <img src="assets/images/back_cloud.png" class="dir_back_cloud"> <!-- Задник облако-->
+
+      
+
+        <img src="assets/images/Piloting.png" alt="Пилотирование" class="dir_img flex_pil_4">
+
+
+        <div class="direction flex_pil_3">
+          <h3>ПИЛОТИРОВАНИЕ</h3>
+          <p>Дети учатся управлять беспилотниками в реальном времени, развивая навыки точного пилотирования и
+            безопасного
+            выполнения полётных задач.</p>
+        </div>
+      
+
+      <img src="assets/images/back_drone.png" class="dir_back_drone"> <!-- Задник дрон-->
+
+      
+
+        <div class="direction flex_pil_5">
+          <h3>ЭЛЕКТРОНИКА</h3>
+          <p>Ребята знакомятся с электроникой, изучая устройства и датчики, обеспечивающие стабильную работу и
+            безопасность дронов.</p>
+        </div>
+
+        <img src="assets/images/Electronics.png" alt="Электроника" class="dir_img flex_pil_6">
+      
+
     </div>
   </section>
 
@@ -104,37 +142,60 @@
   <section class="registration" id="registration">
     <div class="container registration__grid">
       <div class="registration__col">
-        <h2 class="h2">ОСТАВЬ ЗАЯВКУ</h2>
-        <p>Наведи камеру на QR-код или перейди по ссылке!</p>
-        <div class="qr-wrap">
-          <img src="assets/images/qr1.png" alt="QR код" class="qr">
+
+        <!-- Первый ряд: заявка -->
+        <div class="qr-row">
+          <div class="qr-wrap">
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf75ITwkgPTSc0FZ2boQnh3Tp7IJJPDBKlgbxKi-ej-VpZySA/viewform?pli=1">
+              <img src="assets/images/YA.png" alt="QR код" class="qr">
+            </a>
+          </div>
+          <div class="qr-text">
+            <h2 class="h2">ОСТАВЬ ЗАЯВКУ</h2>
+            <p>Наведи камеру на QR-код <br>или перейди по ссылке!</p>
+          </div>
         </div>
-      </div>
-      <div class="registration__col">
-        <h2 class="h2">НАШИ СОЦИАЛЬНЫЕ СЕТИ</h2>
-        <div class="qr-socials">
-          <img src="assets/images/VK_QR.png" alt="VK QR" class="qr">
-          <img src="assets/images/qr2.png" alt="QR код" class="qr">
+
+        <img src="assets/images/back_cloud.png" class="dir_back_cloud_2"> <!-- Задник облако-->
+
+        <!-- Второй ряд: соцсети -->
+        <div class="qr-row">
+          <div class="qr-wrap">
+            <a href="https://vk.com/club221950840">
+              <img src="assets/images/VK_QR.png" alt="VK QR" class="qr">
+            </a>
+          </div>
+          <div class="qr-text">
+            <h2 class="h2">ПОДПИСЫВАЙСЯ НА НАШИ СОЦ СЕТИ</h2>
+            <p>Следи за новостями  и будь в курсе всех событий!</p>
+          </div>
         </div>
       </div>
     </div>
-    <footer class="footer">
-      <div class="container footer__content">
-        <p>
-          По вопросам поступления, организации обучения:<br>
-          <b>+7 (917) 229-75-70</b> &nbsp;&nbsp; | &nbsp;&nbsp; bpla@kai.ru
-        </p>
-        <div class="footer__logos">
-          <img src="assets/images/logo.png" alt="Детский центр БПЛА">
-          <img src="assets/images/logo_kai.png" alt="КАИ">
-        </div>
-        <img src="assets/images/logo_2.png" alt="Партнёр КАИ" class="footer__logo_large">
-      </div>
-      <p class="footer__copy footer__copy--center">© 2025 ФГБОУ ВО "КНИТУ-КАИ"</p>
-    </footer>
   </section>
 
-  <script src="script.js" defer></script>
+  <footer class="footer">
+    <div class="container footer__content">
+      <p>
+        По вопросам поступления, организации обучения:<br>
+        <b><a class="link" href="tel:+79172297570">+7 (917) 229-75-70</a></b> &nbsp;&nbsp; | &nbsp;&nbsp;
+        <a class="link" href="email:bpla@kai.ru">bpla@kai.ru</a>
+      </p>
+      <div class="footer__logos">
+        <img src="assets/images/logo.png" alt="Детский центр БПЛА">
+        <img src="assets/images/logo_kai.png" alt="КАИ">
+        <img src="assets/images/logo_2.png" alt="Партнёр КАИ">
+      </div>
+      <div class="footer__logo_large">
+
+      </div>
+    </div>
+    <p class="footer__copy footer__copy--center">© 2025 ФГБОУ ВО "КНИТУ-КАИ"</p>
+  </footer>
+
+
 
 </body>
+
 </html>
